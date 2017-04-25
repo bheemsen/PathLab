@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{14A766F3-91C0-4B2C-9FAF-6680CE37C96D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PathLab</RootNamespace>
+    <AssemblyName>PathLab</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clDropDown.cs" />
+    <Compile Include="CommonConstants.cs" />
+    <Compile Include="frmViewPatientReportData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewPatientReportData.Designer.cs">
+      <DependentUpon>frmViewPatientReportData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dsReport.cs">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmViewPatientReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewPatientReport.Designer.cs">
+      <DependentUpon>frmViewPatientReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dsReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearchPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearchPatient.Designer.cs">
+      <DependentUpon>frmSearchPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbHelper.cs" />
+    <Compile Include="frmDoctorMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoctorMaster.Designer.cs">
+      <DependentUpon>frmDoctorMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientMaster.Designer.cs">
+      <DependentUpon>frmPatientMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPatientReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPatientReport.Designer.cs">
+      <DependentUpon>frmPatientReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportConfiguration.Designer.cs">
+      <DependentUpon>frmReportConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportMaster.Designer.cs">
+      <DependentUpon>frmReportMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTestMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTestMaster.Designer.cs">
+      <DependentUpon>frmTestMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMDIParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMDIParent.Designer.cs">
+      <DependentUpon>frmMDIParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmViewPatientReportData.resx">
+      <DependentUpon>frmViewPatientReportData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewPatientReport.resx">
+      <DependentUpon>frmViewPatientReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearchPatient.resx">
+      <DependentUpon>frmSearchPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDoctorMaster.resx">
+      <DependentUpon>frmDoctorMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientMaster.resx">
+      <DependentUpon>frmPatientMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPatientReport.resx">
+      <DependentUpon>frmPatientReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportConfiguration.resx">
+      <DependentUpon>frmReportConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportMaster.resx">
+      <DependentUpon>frmReportMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTestMaster.resx">
+      <DependentUpon>frmTestMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMDIParent.resx">
+      <DependentUpon>frmMDIParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="PatientReport.rdlc" />
+    <EmbeddedResource Include="rptPatientReport.rdlc" />
+    <None Include="dsReport.xsc">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </None>
+    <None Include="dsReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsReport.xss">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
